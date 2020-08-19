@@ -336,7 +336,7 @@ const cnfTable = {
 		E.get_node(div, 'DIV', 'delete').firstChild.onclick = function () {
 			const P = this.parentNode.parentNode;
 
-			if (!confirm('移除 "'+ E.get_node(P, 'DIV', 'name').textContent +'" 嗎？')) return;
+			if (!confirm('移除 "'+ E.get_node(P, 'DIV', 'ingredient').textContent +'" 嗎？')) return;
 
 			cnfIngredient.remove(parseInt(P.getAttribute('row-index')));
 			_self.render();
