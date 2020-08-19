@@ -388,6 +388,7 @@ const cnfTotalDialog = {
 		T.select();
 		document.execCommand("copy");
 		T.classList.add('hidden');
+		alert('複製完成！');
 	}
 	,show: function () {
 		this.Table.innerHTML = this.ret_table();
