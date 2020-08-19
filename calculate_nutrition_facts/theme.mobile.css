@@ -1,0 +1,235 @@
+
+@media only screen and (max-width: 760px) {
+
+/* ========================================================================== */
+
+body {
+	font-size : 16px;
+}
+
+input, textarea, select {
+	line-height : 30px;
+	font-size : 18px;
+}
+
+select {
+	height : 32px;
+}
+
+textarea {
+	padding : 5px 5px;
+	line-height : 24px;
+}
+
+button {
+	padding : 0 10px;
+	font-size : 18px;
+}
+
+/* ========================================================================== */
+
+div#header {
+	line-height : 39px;
+	font-size : 20px;
+}
+
+div#header div.action div {
+	margin-right : 5px;
+}
+
+div#header div.action div button {
+	padding : 0 10px;
+	line-height : 29px;
+}
+
+
+/* ========================================================================== */
+
+div#ingredient {
+	top : 40px;
+	padding : 10px 0;
+}
+
+div#ingredient > div {
+	width : 94%;
+}
+
+div#ingredient > div input {
+	width : 60px;
+}
+
+
+
+div#ingredient div.header {
+	height : 75px;
+}
+
+div#ingredient div.header div {
+	margin-top : 5px;
+	padding-left : 10px;
+}
+
+div#ingredient div.header div label {
+	line-height : 26px;
+}
+
+div#ingredient div.header div input#PRODUCT-NAME {
+	width : 140px;
+}
+
+div#ingredient div.header div input#COPIES {
+	width : 50px;
+}
+
+
+
+div#ingredient div.field {
+	top : 75px;
+	justify-content : space-between;
+	line-height : 30px;
+}
+
+
+
+div#ingredient div.field-width div.delete {
+	width : 14%;
+}
+
+div#ingredient div.field-width div.no {
+	width : 14%;
+}
+
+div#ingredient div.field-width div.ingredient {
+	width : 49%;
+}
+
+div#ingredient div.field-width div.gram {
+	width : 22%;
+}
+
+
+
+div#ingredient div.list {
+	top : 105px;
+}
+
+div#ingredient div.list div.items > div {
+	line-height : 36px;
+}
+
+div#ingredient div.list div.items div div.no {
+	font-size : 14px;
+}
+
+div#ingredient div.list div div.delete span {
+	width : 24px;
+	line-height : 24px;
+	font-size : 12px;
+}
+
+
+
+
+div#ingredient div.list div.button {
+	padding : 10px 0 20px 0;
+}
+
+
+
+div#ingredient div.footer {
+	padding : 4px 5px 5px 5px;
+}
+
+/* ========================================================================== */
+
+div.dialog > div {
+	left : 10px;
+	top : 35px;
+	right : 10px;
+	bottom : 35px;
+}
+
+div.dialog > div > div {
+	margin : 0;
+	width : 100%;
+	height : 100%;
+}
+
+
+
+div.dialog div.close button {
+	width : 50px;
+	line-height : 40px;
+	font-size : 20px;
+}
+
+
+div.dialog h3 {
+	padding : 5px 0 5px 15px;
+	line-height : 30px;
+	font-size : 20px;
+}
+
+div.dialog div.content {
+	left : 10px;
+	top : 50px;
+	right : 10px;
+	bottom : 60px;
+	overflow : auto;
+}
+
+div.dialog div.footer {
+	padding : 4px 5px 5px 5px;
+}
+
+/* ========================================================================== */
+
+div.dialog-search div.content div.search div.keyword {
+	margin-right : 5px;
+	width : 45%;
+}
+
+div.dialog-search div.content div.search div.button button {
+	line-height : 32px;
+}
+
+div.dialog-search div.content div.search div.rows {
+	padding-top : 8px;
+}
+
+
+
+div.dialog-search div.content div.items {
+	top : 40px;
+}
+
+div.dialog-search div.content div.items > div {
+	height : 75px;
+	padding : 5px 5px 0 5px;
+	line-height : 18px;
+}
+
+div.dialog-search div.content div.items div h4 {
+	font-size : inherit;
+}
+
+div.dialog-search div.content div.items div p {
+	margin-top : 3px;
+	padding-left : 10px;
+	font-size : 14px;
+}
+
+/* ========================================================================== */
+
+div.dialog-total div.table > div {
+	line-height : 24px;
+	font-size : 14px;
+}
+
+div.dialog-total div.table div div {
+	padding : 0 3px;
+}
+
+/* ========================================================================== */
+
+}

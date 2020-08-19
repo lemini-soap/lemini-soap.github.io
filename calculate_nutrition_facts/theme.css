@@ -1,0 +1,581 @@
+
+
+.font-number {
+	font-family : "Trebuchet MS", Arial;
+}
+
+.font-code {
+	font-family : Consolas, "Courier New", "Lucida Console", Courier, monospace;
+}
+
+/* ========================================================================== */
+
+body {
+	margin : 0;
+	padding : 0;
+	font-size : 18px;
+	font-family : "Microsoft YaHei", "Yu Gothic", "Arial Unicode MS", Helvetica, sans-serif;
+	color : #000000;
+	background-color : #455A64; /* 700 */
+	overflow : hidden;
+}
+
+img {
+	display : block;
+	margin : 0;
+}
+
+ul {
+	list-style-type : none;
+	margin : 0;
+	padding : 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin : 0;
+	padding : 0;
+	font-size : inherit;
+}
+
+span, a, label, input, textarea, select, button {
+	display : inline-block;
+}
+
+a {
+	text-decoration : none;
+	color : inherit;
+}
+
+input, textarea, select {
+	margin : 0;
+	padding : 0 5px;
+	line-height : 34px;
+	font-family : Consolas, "Courier New", "Lucida Console", Courier, monospace;
+	font-size : 20px;
+	background-color : #FAFAFA; /* 050 */
+	border-style : solid;
+	border-width : 1px;
+	border-color : #9E9E9E; /* 400 */
+	box-sizing : border-box;
+}
+
+select {
+	height : 36px;
+}
+
+textarea {
+	padding : 5px 5px;
+	line-height : 24px;
+}
+
+input:focus, textarea:focus, select:focus {
+	background-color : #FFF8E1; /* 050 */
+	border-color : #FFA000; /* 700 */
+	outline: none;
+}
+
+button {
+	line-height : 40px;
+	padding : 0 30px;
+	font-size : inherit;
+	color : #FFFFFF;
+	background-color : #0288D1; /* 700 */
+	border-width : 0;
+	border-radius : 4px;
+	/* box-shadow : 0 3px 0 #01579B; 900 */
+}
+
+button:focus {
+	outline-style : dotted;
+	outline-width : 1px;
+	outline-offset : -8px;
+	outline-color : #FFFFFF;
+}
+
+button.action {
+	background-color : #F4511E; /* 600 */
+	/* box-shadow : 0 3px 0 #BF360C;  900 */
+}
+
+button.close {
+	width : 60px;
+	padding : 0;
+	text-align : center;
+	color : #ffffff; /* 700 */
+	background-color : rgba(0, 0, 0, 0.2);
+	border-radius : 0;
+	/* box-shadow : 0 1px 0 #b71c1c; 900 */
+}
+
+span.link {
+	color : #0288D1; /* 700 */
+	text-decoration : underline;
+}
+
+.hidden {
+	display : none;
+}
+
+/* ========================================================================== */
+
+div > button {
+	display : block;
+}
+
+div > input {
+	display : block;
+}
+
+.no-see {
+	position : fixed;
+	left : -5000px;
+	top : -300px;
+}
+
+
+/* ========================================================================== */
+
+div#header {
+	position : fixed;
+	left : 0;
+	top : 0;
+	right : 0;
+	line-height : 49px;
+	color : #ffffff;
+	background-color : #558B2F; /* 800 */
+	border-style : solid;
+	border-width : 0 0 1px 0;
+	border-color : #33691E; /* 900 */
+	box-shadow : 0 1px 10px #000000;
+}
+
+div#header h1 {
+	margin-left : 15px;
+	font-size : 24px;
+}
+
+div#header div.action {
+	position : absolute;
+	top : 5px;
+	right : 0;
+	display : flex;
+}
+
+div#header div.action div {
+	margin-right : 10px;
+}
+
+div#header div.action div button {
+	padding : 0 15px;
+	line-height : 39px;
+	background-color : #7CB342; /* 600 */
+}
+
+/* ========================================================================== */
+
+div#ingredient {
+	position : fixed;
+	left : 0;
+	top : 50px;
+	right : 0;
+	bottom : 0;
+	padding : 20px 0;
+	overflow : auto;
+}
+
+div#ingredient > div {
+	position : relative;
+	margin : 0 auto;
+	width : 720px;
+	height : 100%;
+	background-color : #EEEEEE; /* 200 */
+	border-radius : 4px;
+	box-shadow : 1px 2px 10px #000000;
+	overflow : hidden;
+}
+
+div#ingredient > div > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+div#ingredient > div input {
+	width : 100px;
+}
+
+
+
+div#ingredient div.header {
+	top : 0;
+	height : 85px;
+	display : flex;
+	color : #ffffff;
+	background-color : #795548; /* 500 */
+}
+
+div#ingredient div.header div {
+	margin-top : 6px;
+	padding-left : 15px;
+}
+
+div#ingredient div.header div label {
+	display : block;
+	line-height : 30px;
+}
+
+div#ingredient div.header div input {
+	border-color : #BCAAA4; /* 200 */
+}
+
+div#ingredient div.header div input#PRODUCT-NAME {
+	width : 300px;
+}
+
+div#ingredient div.header div input#COPIES {
+	width : 60px;
+}
+
+
+
+div#ingredient div.field {
+	top : 85px;
+	display : flex;
+	line-height : 40px;
+	background-color : #BCAAA4; /* 200 */
+}
+
+
+
+div#ingredient div.field-width div.delete {
+	width : 9%;
+}
+
+div#ingredient div.field-width div.no {
+	width : 9%;
+}
+
+div#ingredient div.field-width div.ingredient {
+	width : 63%;
+	overflow : hidden;
+}
+
+div#ingredient div.field-width div.gram {
+	width : 18%;
+}
+
+
+
+div#ingredient div.list {
+	top : 125px;
+	bottom : 0;
+	overflow : auto;
+}
+
+div#ingredient div.list div.items {
+	background-color : #F5F5F5; /* 100 */
+
+}
+
+div#ingredient div.list div.items > div {
+	display : flex;
+	padding : 5px 0;
+	line-height : 40px;
+	border-style : dotted;
+	border-width : 0 0 1px 0;
+	border-color : #BDBDBD; /* 400 */
+}
+
+div#ingredient div.list div.items > div:nth-child(even) {
+	background-color : #EFEBE9; /* 000 */
+}
+
+div#ingredient div.list div.items div div.delete {
+	position : relative;
+}
+
+div#ingredient div.list div.items div div.no {
+	font-size : 20px;
+}
+
+div#ingredient div.list div div.delete span {
+	display : block;
+	margin : 5px 0 0 5px;
+	width : 30px;
+	line-height : 30px;
+	font-size : 16px;
+	text-align : center;
+	color : #ffffff;
+	background-color : #e57373; /* 300 */
+	border-radius : 50%;
+}
+
+
+
+
+
+div#ingredient div.list div.button {
+	display : flex;
+	padding : 15px 0 30px 0;
+}
+
+div#ingredient div.list div.button div.delete span {
+	background-color : #BDBDBD; /* 400 */
+}
+
+
+
+div#ingredient div.footer {
+	bottom : 0;
+	display : flex;
+	padding : 14px 15px 15px 15px;
+	border-style : solid;
+	border-width : 1px 0 0 0;
+	border-color : #BDBDBD; /* 400 */
+	background-color : #EEEEEE; /* 200 */
+}
+
+div#ingredient div.footer div.right {
+	margin-left : auto;
+}
+
+
+/* ========================================================================== */
+
+div.dialog {
+	position : fixed;
+	z-index: 999;
+	left : 0;
+	top : 0;
+	right : 0;
+	bottom : 0;
+	background-color : rgba(0, 0, 0, 0.4);
+}
+
+div.dialog > div {
+	position : absolute;
+	left : 0;
+	top : 20px;
+	right : 0;
+	bottom : 60px;
+}
+
+div.dialog > div > div {
+	position : relative;
+	margin : 0 auto;
+	width : 720px;
+	height : 100%;
+	background-color : #ffffff;
+	border-radius : 8px;
+	box-shadow : 1px 2px 10px #000000;
+	overflow : hidden;
+}
+
+div.dialog > div > div > div {
+	position : absolute;
+}
+
+div.dialog div.close {
+	z-index : 998;
+	right : 0;
+	top : 0;
+}
+
+div.dialog div.close button {
+	line-height : 50px;
+	font-size : 24px;
+	font-weight : bold;
+}
+
+div.dialog h3 {
+	position : absolute;
+	left : 0;
+	top : 0;
+	right : 0;
+	padding : 5px 0 5px 15px;
+	line-height : 40px;
+	font-size : 24px;
+	color : #ffffff; 
+	background-color : #AD1457; /* 800 */
+}
+
+div.dialog div.content {
+	left : 20px;
+	top : 70px;
+	right : 20px;
+	bottom : 100px;
+	overflow : auto;
+}
+
+div.dialog div.footer {
+	left : 0;
+	right : 0;
+	bottom : 0;
+	display : flex;
+	padding : 19px 20px 20px 20px;
+	border-style : solid;
+	border-width : 1px 0 0 0;
+	border-color : #BDBDBD; /* 400 */
+	background-color : #EEEEEE; /* 200 */
+}
+
+div.dialog div.footer div.right {
+	margin-left : auto;
+}
+
+/* ========================================================================== */
+
+div.dialog-search div.content > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+div.dialog-search div.content div.search {
+	top : 0;
+	display : flex;
+}
+
+div.dialog-search div.content div.search div.right {
+	margin-left : auto;
+}
+
+div.dialog-search div.content div.search div.keyword {
+	margin-right : 10px;
+	width : 40%;
+}
+
+div.dialog-search div.content div.search div.keyword input {
+	width : 100%;
+}
+
+div.dialog-search div.content div.search div.button button {
+	padding : 0 10px;
+	line-height : 36px;
+}
+
+div.dialog-search div.content div.search div.rows {
+	padding-top : 10px;
+}
+
+
+
+div.dialog-search div.content div.items {
+	top : 45px;
+	bottom : 0;
+	background-color : #ffffff;
+	border-style : solid;
+	border-width : 1px;
+	border-color : #BDBDBD; /* 400 */
+	overflow : auto;
+}
+
+div.dialog-search div.content div.items > div {
+	position : relative;
+	height : 99px;
+	padding : 15px 20px 0 15px;
+	line-height : 26px;
+	border-style : solid;
+	border-width : 0 0 1px 0;
+	border-color : #E0E0E0; /* 300 */
+	overflow : hidden;
+}
+
+div.dialog-search div.content div.items div.focus {
+	background-color : #009688; /* 500 */
+}
+
+div.dialog-search div.content div.items div.focus::after {
+	position : absolute;
+	left : 0;
+	top : 0;
+	right : 0;
+	bottom : 0;
+	border-style : solid;
+	border-width : 2px;
+	border-color : #00695C; /* 800 */
+	content : "";
+}
+
+div.dialog-search div.content div.items div.focus > * {
+	color : #ffffff;
+}
+
+div.dialog-search div.content div.items div mark {
+	color : #000000;
+	background-color : #FFEB3B; /* 500 */
+}
+
+div.dialog-search div.content div.items div h4 {
+	font-size : 20px;
+	color : #AD1457; /* 800 */
+}
+
+div.dialog-search div.content div.items div p {
+	margin-top : 5px;
+	padding-left : 20px;
+	color : #757575; /* 600 */
+}
+
+/* ========================================================================== */
+
+div.dialog-total > div > div {
+	width : 600px;
+}
+
+div.dialog-total div.content {
+	border-style : solid;
+	border-width : 2px;
+	border-color : #BDBDBD; /* 400 */
+}
+
+div.dialog-total div.table > div {
+	display : flex;
+	line-height : 36px;
+	font-size : 20px;
+}
+
+div.dialog-total div.table div.bottom-border {
+	border-style : solid;
+	border-width : 0 0 2px 0;
+	border-color : #BDBDBD; /* 400 */
+}
+
+div.dialog-total div.table div div {
+	padding : 0 10px;
+	box-sizing : border-box;
+	text-align : right;
+}
+
+
+div.dialog-total div.table div.title div {
+	width : 100%;
+	text-align : center;
+}
+
+
+div.dialog-total div.table div.field div:nth-child(1) {
+	width : 65%;
+}
+
+div.dialog-total div.table div.field div:nth-child(2) {
+	width : 35%;
+}
+
+
+div.dialog-total div.table div.row div:nth-child(1) {
+	width : 30%;
+	text-align : left;
+}
+
+div.dialog-total div.table div.row div:nth-child(2) {
+	width : 35%;
+}
+
+div.dialog-total div.table div.row div:nth-child(3) {
+	width : 35%;
+}
+
+/* ========================================================================== */
+/* ========================================================================== */
+
