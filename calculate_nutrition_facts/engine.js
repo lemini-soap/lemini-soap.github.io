@@ -551,25 +551,28 @@ const cnfSearchDialog = {
 
 	,Container: null
 	,Keyword: null
+	,Search: null
 	,init: function () {
 		const E = cnfOp.Element;
 		const _self = this;
 
 		this.Container = E.get_id('SEARCH-DIALOG');
 		this.Keyword = E.get_id('SEARCH-DIALOG-KEYWORD');
+		this.Search = E.get_id('SEARCH-DIALOG-SEARCH');
 		this.Item.init(this);
 
 		this.Keyword.onkeyup = function () {
 			if (13 != event.keyCode) return;
 			
-			_self.search();
+			_self.Search.focus();
+			_self.search_word();
+		};
+		this.Search.onclick = function () {
+			_self.search_word();
 		};
 
 		E.get_id('SEARCH-DIALOG-CLOSE').onclick = function () {
 			_self.Container.classList.add('hidden');
-		};
-		E.get_id('SEARCH-DIALOG-SEARCH').onclick = function () {
-			_self.search();
 		};
 		E.get_id('SEARCH-DIALOG-CANCEL').onclick = function () {
 			_self.cancel();
@@ -583,7 +586,7 @@ const cnfSearchDialog = {
 		this.Container.classList.remove('hidden');
 		this.Keyword.focus();
 	}
-	,search: function () {
+	,search_word: function () {
 		if ('' == this.Keyword.value) return;
 
 		this.Item.search(this.Keyword.value);
