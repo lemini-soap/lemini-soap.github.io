@@ -125,6 +125,7 @@ div#ingredient div.list div.items > div {
 }
 
 div#ingredient div.list div div.delete span {
+	margin-top : 3px;
 	width : 24px;
 	line-height : 24px;
 	font-size : 12px;
@@ -135,6 +136,10 @@ div#ingredient div.list div div.delete span {
 
 div#ingredient div.list div.button {
 	padding : 10px 0 20px 0;
+}
+
+div#ingredient div.list div.button div.delete span {
+	margin-top : 1px;
 }
 
 
