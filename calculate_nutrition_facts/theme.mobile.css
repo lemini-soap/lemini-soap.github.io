@@ -4,12 +4,12 @@
 /* ========================================================================== */
 
 body {
-	font-size : 16px;
+	font-size : 14px;
 }
 
 input, textarea, select {
-	line-height : 30px;
-	font-size : 18px;
+	line-height : 24px;
+	font-size : 16px;
 }
 
 select {
@@ -18,19 +18,23 @@ select {
 
 textarea {
 	padding : 5px 5px;
-	line-height : 24px;
+	line-height : 20px;
 }
 
 button {
 	padding : 0 10px;
-	font-size : 18px;
+	line-height : 26px;
 }
 
 /* ========================================================================== */
 
 div#header {
+	z-index : 99;
 	line-height : 39px;
-	font-size : 20px;
+}
+
+div#header h1 {
+	font-size : 18px;
 }
 
 div#header div.action div {
@@ -46,12 +50,15 @@ div#header div.action div button {
 /* ========================================================================== */
 
 div#ingredient {
+	z-index : 98;
 	top : 40px;
-	padding : 10px 0;
+	padding : 0;
 }
 
 div#ingredient > div {
-	width : 94%;
+	width : 100%;
+	border-radius : 0;
+	box-shadow : none;
 }
 
 div#ingredient > div input {
@@ -61,7 +68,7 @@ div#ingredient > div input {
 
 
 div#ingredient div.header {
-	height : 75px;
+	height : 65px;
 }
 
 div#ingredient div.header div {
@@ -84,7 +91,7 @@ div#ingredient div.header div input#COPIES {
 
 
 div#ingredient div.field {
-	top : 75px;
+	top : 65px;
 	justify-content : space-between;
 	line-height : 30px;
 }
@@ -110,15 +117,11 @@ div#ingredient div.field-width div.gram {
 
 
 div#ingredient div.list {
-	top : 105px;
+	top : 95px;
 }
 
 div#ingredient div.list div.items > div {
-	line-height : 36px;
-}
-
-div#ingredient div.list div.items div div.no {
-	font-size : 14px;
+	line-height : 30px;
 }
 
 div#ingredient div.list div div.delete span {
@@ -144,9 +147,9 @@ div#ingredient div.footer {
 
 div.dialog > div {
 	left : 10px;
-	top : 35px;
+	top : 10px;
 	right : 10px;
-	bottom : 35px;
+	bottom : 10px;
 }
 
 div.dialog > div > div {
@@ -159,22 +162,22 @@ div.dialog > div > div {
 
 div.dialog div.close button {
 	width : 50px;
-	line-height : 40px;
+	line-height : 30px;
 	font-size : 20px;
 }
 
 
 div.dialog h3 {
-	padding : 5px 0 5px 15px;
+	padding-left : 10px;
 	line-height : 30px;
-	font-size : 20px;
+	font-size : 18px;
 }
 
 div.dialog div.content {
 	left : 10px;
-	top : 50px;
+	top : 40px;
 	right : 10px;
-	bottom : 60px;
+	bottom : 45px;
 	overflow : auto;
 }
 
@@ -190,17 +193,17 @@ div.dialog-search div.content div.search div.keyword {
 }
 
 div.dialog-search div.content div.search div.button button {
-	line-height : 32px;
+	line-height : 26px;
 }
 
 div.dialog-search div.content div.search div.rows {
-	padding-top : 8px;
+	padding-top : 4px;
 }
 
 
 
 div.dialog-search div.content div.items {
-	top : 40px;
+	top : 35px;
 }
 
 div.dialog-search div.content div.items > div {
@@ -216,7 +219,6 @@ div.dialog-search div.content div.items div h4 {
 div.dialog-search div.content div.items div p {
 	margin-top : 3px;
 	padding-left : 10px;
-	font-size : 14px;
 }
 
 /* ========================================================================== */

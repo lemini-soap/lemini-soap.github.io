@@ -264,6 +264,10 @@ div#ingredient div.field-width div.gram {
 	width : 18%;
 }
 
+div#ingredient div.field-width div.gram input {
+	margin-top : 2px;
+}
+
 
 
 div#ingredient div.list {
@@ -392,8 +396,8 @@ div.dialog h3 {
 	left : 0;
 	top : 0;
 	right : 0;
-	padding : 5px 0 5px 15px;
-	line-height : 40px;
+	padding-left : 15px;
+	line-height : 50px;
 	font-size : 24px;
 	color : #ffffff; 
 	background-color : #AD1457; /* 800 */
