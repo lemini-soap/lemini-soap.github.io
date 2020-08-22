@@ -1,0 +1,555 @@
+
+
+.font-number {
+	font-family : "Trebuchet MS", Arial;
+}
+
+.font-code {
+	font-family : Consolas, "Courier New", "Lucida Console", Courier, monospace;
+}
+
+/* ========================================================================== */
+
+body {
+	margin : 0;
+	padding : 0;
+	font-size : 18px;
+	font-family : "Microsoft YaHei", "Yu Gothic", "Arial Unicode MS", Helvetica, sans-serif;
+	color : #000000;
+	background-color : #E0E0E0; /* 300 */
+	overflow : hidden;
+}
+
+img {
+	display : block;
+	margin : 0;
+}
+
+ul {
+	list-style-type : none;
+	margin : 0;
+	padding : 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin : 0;
+	padding : 0;
+	font-size : inherit;
+}
+
+span, a, label, input, textarea, select, button {
+	display : inline-block;
+}
+
+a {
+	text-decoration : none;
+	color : inherit;
+}
+
+input, textarea, select {
+	margin : 0;
+	padding : 0 5px;
+	line-height : 34px;
+	font-family : Consolas, "Courier New", "Lucida Console", Courier, monospace;
+	font-size : 20px;
+	background-color : #ffffff;
+	border-style : solid;
+	border-width : 1px;
+	border-color : #9E9E9E; /* 400 */
+	box-sizing : border-box;
+}
+
+select {
+	height : 36px;
+}
+
+textarea {
+	padding : 5px 5px;
+	line-height : 24px;
+}
+
+input:focus, textarea:focus, select:focus {
+	background-color : #FFF8E1; /* 050 */
+	border-color : #FFA000; /* 700 */
+	outline: none;
+}
+
+button {
+	line-height : 36px;
+	padding : 0 20px;
+	font-size : inherit;
+	color : #FFFFFF;
+	background-color : #0288D1; /* 700 */
+	border-width : 0;
+	border-radius : 4px;
+	/* box-shadow : 0 3px 0 #01579B; 900 */
+}
+
+button:focus {
+	outline-style : dotted;
+	outline-width : 1px;
+	outline-offset : -8px;
+	outline-color : #FFFFFF;
+}
+
+button.action {
+	background-color : #F4511E; /* 600 */
+	/* box-shadow : 0 3px 0 #BF360C;  900 */
+}
+
+button.close {
+	width : 60px;
+	padding : 0;
+	text-align : center;
+	color : #ffffff; /* 700 */
+	background-color : rgba(0, 0, 0, 0.2);
+	border-radius : 0;
+	/* box-shadow : 0 1px 0 #b71c1c; 900 */
+}
+
+button.unimportant {
+	background-color : #9E9E9E; /* 500 */
+}
+
+*.hidden {
+	display : none;
+}
+
+/* ========================================================================== */
+
+div > button {
+	display : block;
+}
+
+div > input {
+	display : block;
+}
+
+div > label {
+	display : block;
+}
+
+*.no-see {
+	position : fixed;
+	left : -5000px;
+	top : -300px;
+}
+
+/* ========================================================================== */
+
+h1 {
+	padding-left : 20px;
+	line-height : 50px;
+	font-size : 22px;
+	color : #ffffff;
+	background-color : #AD1457; /* 800 */
+}
+
+/* ========================================================================== */
+
+div.dashboard {
+	position : absolute;
+	left : 0;
+	top : 50px;
+	right : 0;
+	bottom : 0;
+}
+
+div.dashboard  > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+div.dashboard div.tabs {
+	display : none;
+}
+
+div.dashboard div.panels-container {
+	top : 0;
+	bottom : 0;
+}
+
+div.dashboard div.panels-container div.panels {
+	position : relative;
+	margin : 0 auto;
+	width : 1280px;
+	height : 100%;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.panels > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+	background-color : #FAFAFA; /* 100 */
+	border-radius : 4px;
+	overflow : hidden;
+}
+
+div.dashboard div.panels div.config {
+	bottom : 20px;
+}
+
+div.dashboard div.panels div.search {
+	top : 20px;
+	right : 920px;
+	bottom : 120px;
+}
+
+div.dashboard div.panels div.ingredient {
+	top : 20px;
+	left : 380px;
+	right : 380px;
+	bottom : 120px;
+}
+
+div.dashboard div.panels div.result {
+	top : 20px;
+	left : 920px;
+	bottom : 120px;
+}
+
+
+
+
+div.dashboard div.panels div.board > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+div.dashboard div.panels div.board div.header {
+	top : 0;
+	line-height : 50px;
+	font-size : 20px;
+	font-weight : bold;
+	text-align : center;
+	color : #ffffff;
+	background-color : #546E7A; /* 600 */
+}
+
+div.dashboard div.panels div.board div.footer {
+	bottom : 0;
+	height : 60px;
+	display : flex;
+	align-items : center;
+	background-color : #EEEEEE; /* 200 */
+}
+
+div.dashboard div.panels div.board div.footer::after {
+	position : absolute;
+	left : 0;
+	top : 0;
+	right : 0;
+	border-style : solid;
+	border-width : 1px 0 0 0;
+	border-color : #9E9E9E; /* 500 */
+	content : "";
+}
+
+div.dashboard div.panels div.board div.footer > div {
+	margin-left : 10px;
+}
+
+div.dashboard div.panels div.board div.footer > div.right {
+	margin-left : auto;
+	margin-right : 10px;
+}
+
+div.dashboard div.panels div.board div.content {
+	top : 50px;
+	bottom : 60px;
+	overflow : auto;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.config {
+	border-style : solid;
+	border-width : 0 0 0 5px;
+	border-color : #546E7A; /* 600 */
+}
+
+div.dashboard div.config div.title {
+	display : none;
+}
+
+div.dashboard div.config div.field {
+	height : 80px;
+	display : flex;
+	align-items : center;
+}
+
+div.dashboard div.config div.field div {
+	margin-left : 20px;
+}
+
+div.dashboard div.config div.field div label {
+	line-height : 24px;
+	font-size : 16px;
+	color : #757575; /* 600 */
+}
+
+div.dashboard div.config div.field div input {
+	width : 120px;
+}
+
+div.dashboard div.config div.field div.product-name input {
+	width : 335px;
+}
+
+div.dashboard div.config div.field div.copies input {
+	width : 80px;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.search div.content > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+div.dashboard div.search div.input {
+	top : 0;
+	display : flex;
+	align-items : center;
+	height : 55px;
+}
+
+div.dashboard div.search div.input div {
+	margin-left : 10px;
+}
+
+div.dashboard div.search div.input div.keyword {
+	width : 60%;
+}
+
+div.dashboard div.search div.input div.keyword input {
+	width : 100%;
+}
+
+div.dashboard div.search div.list {
+	top : 55px;
+	bottom : 0;
+	overflow : auto;
+	border-style : solid;
+	border-width : 1px 0 0 0;
+	border-color : #9E9E9E; /* 500 */
+}
+
+div.dashboard div.search div.list div {
+	position : relative;
+	padding : 10px;
+	height : 79px;
+	border-style : dashed;
+	border-width : 0 0 1px 0;
+	border-color : #BDBDBD; /* 400 */
+	overflow : hidden;
+}
+
+div.dashboard div.search div.list div:nth-child(even) {
+	background-color : #EFEBE9; /* 000 */
+}
+
+div.dashboard div.search div.list div label {
+	font-weight : bold;
+	color : #C2185B; /* 700 */
+}
+
+div.dashboard div.search div.list div p {
+	padding : 5px 0 0 15px;
+	line-height : 20px;
+	font-size : 16px;
+	color : #757575; /* 600 */
+}
+
+div.dashboard div.search div.list div.focus {
+	background-color : #FFF8E1; /* 050 */
+}
+
+div.dashboard div.search div.list div.focus::before {
+	position : absolute;
+	left : 0;
+	top : 0;
+	right : 0;
+	bottom : 0;
+	border-style : solid;
+	border-width : 3px;
+	border-color : #FFA000; /* 700 */
+	content : "";
+}
+
+div.dashboard div.search div.list div.used label {
+	opacity : 0.2;
+}
+
+div.dashboard div.search div.list div.used p {
+	opacity : 0.4;
+}
+
+div.dashboard div.search div.list div.used::after {
+	position : absolute;
+	top : 30px;
+	right : 30px;
+	line-height : 34px;
+	font-size : 32px;
+	font-weight : bold;
+	color : #b71c1c; /* 900 */
+	border-style : solid;
+	border-width : 3px;
+	border-radius : 4px;
+	content : "已選";
+	transform: rotate(350deg);
+}
+
+/* ========================================================================== */
+
+div.dashboard div.ingredient div.content > div {
+	position : absolute;
+	left : 0;
+	right : 0;
+}
+
+
+div.dashboard div.ingredient div.field {
+	top : 0;
+	line-height : 40px;
+	color : #ffffff;
+	background-color : #A1887F; /* 300 */
+}
+
+
+div.dashboard div.ingredient div.field-width {
+	display : flex;
+}
+
+div.dashboard div.ingredient div.field-width div.delete {
+	width : 12%;
+}
+
+div.dashboard div.ingredient div.field-width div.delete button {
+	margin-left : 10px;
+	padding : 0;
+	width : 30px;
+	line-height : 30px;
+	text-align : center;
+	color : #ffffff;
+	background-color : #ef9a9a; /* 200 */
+}
+
+div.dashboard div.ingredient div.field-width div.no {
+	width : 12%;
+}
+
+div.dashboard div.ingredient div.field-width div.name {
+	width : 48%;
+	overflow : hidden;
+}
+
+div.dashboard div.ingredient div.field-width div.gram {
+	width : 27%;
+}
+
+div.dashboard div.ingredient div.field-width div.gram input {
+	width : 86%;
+}
+
+
+div.dashboard div.ingredient div.list {
+	top : 40px;
+	bottom : 0;
+	overflow : auto;
+}
+
+div.dashboard div.ingredient div.list > div {
+	height : 49px;
+	align-items : center;
+	border-style : dashed;
+	border-width : 0 0 1px 0;
+	border-color : #BDBDBD; /* 400 */
+}
+
+div.dashboard div.ingredient div.list > div:nth-child(even) {
+	background-color : #EFEBE9; /* 000 */
+}
+
+div.dashboard div.ingredient div.list > div.highlight {
+	color : #ffffff;
+	background-color : #C2185B; /* 700 */
+}
+
+/* ========================================================================== */
+
+div.dashboard div.result div.content {
+	padding : 10px;
+}
+
+div.dashboard div.result div.product-name {
+	line-height : 40px;
+	font-weight : bold;
+	text-align : center;
+	color : #E64A19; /* 700 */
+}
+
+div.dashboard div.result div.table > div {
+	display : flex;
+	line-height : 24px;
+	font-size : 16px;
+	border-style : solid;
+	border-width : 0 2px;
+	border-color : #000000;
+}
+
+div.dashboard div.result div.table > div:first-child {
+	border-top-width : 2px;
+}
+
+div.dashboard div.result div.table > div:last-child {
+	border-bottom-width : 2px;
+}
+
+div.dashboard div.result div.table > div.bottom-border {
+	border-bottom-width : 2px;
+}
+
+div.dashboard div.result div.table div div {
+	padding : 0 5px;
+	text-align : right;
+	box-sizing : border-box;
+}
+
+div.dashboard div.result div.table div span {
+	vertical-align : top;
+}
+
+div.dashboard div.result div.table div.title div {
+	width : 100%;
+	line-height : 30px;
+	text-align : center;
+}
+
+div.dashboard div.result div.table div.field div:nth-child(1) {
+	width : 65%;
+}
+
+div.dashboard div.result div.table div.field div:nth-child(2) {
+	width : 35%;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(1) {
+	width : 30%;
+	text-align : left;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(2) {
+	width : 35%;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(3) {
+	width : 35%;
+}
+
+/* ========================================================================== */

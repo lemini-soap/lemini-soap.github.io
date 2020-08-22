@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#558B2F" />
+<link rel="stylesheet" href="theme.css?v=1.0.0" />
+<link rel="stylesheet" href="theme.mobile.css?v=1.0.0" />
+<title>CALCULATE_NUTRITION_FACTS</title>
+<script src="database.js?v=1.0.0"></script>
+<script src="config.js?v=1.0.0"></script>
+<script src="engine.js?v=1.0.0"></script>
+</head><body>
+<!-- ======================================================================= -->
+
+<h1 id="HEADER-TITLE"></h1>
+
+<div class="dashboard">
+	<div class="panels-container"><div class="panels">
+		<div id="__panel_config" class="config">
+			<div class="title">包裝設定</div>
+			<div class="field">
+				<div class="product-name"><label>產品名稱:</label><input id="CONFIG-PRODUCT-NAME" type="text" value="未命名" /></div>
+				<div class="copy-weight"><label>每份: (公克)</label><input id="CONFIG-COPY-WEIGHT" type="number" value="100" /></div>
+				<div class="copies"><label>包裝: (份)</label><input id="CONFIG-COPIES" type="number" value="1" min="1" /></div>
+			</div>
+		</div>
+
+		<div id="__panel_search" class="search board">
+			<div class="header"><span id="SEARCH-COUNT"></span>材料庫</div>
+			<div class="content">
+				<div class="input">
+					<div class="keyword"><input id="SEARCH-KEYWORD" type="search" value="" /></div>
+					<div class="button"><button id="SEARCH-ACTION">搜尋</button></div>
+				</div>
+				<div id="SEARCH-LIST" class="list"></div>
+			</div>
+			<div class="footer">
+				<div><button id="SEARCH-APPEND">加入</button></div>
+			</div>
+		</div>
+
+		<div id="__panel_ingredient" class="ingredient board">
+			<div class="header">用料明細</div>
+			<div class="content">
+				<div class="field field-width">
+					<div class="delete">&nbsp;</div>	
+					<div class="no">編號</div>	
+					<div class="name">材料</div>
+					<div class="gram">公克</div>
+				</div>
+				<div id="INGREDIENT-LIST" class="list">
+				</div>
+			</div>
+			<div class="footer">
+				<div><button id="INGREDIENT-IMPORT">匯入</button></div>
+				<div><button id="INGREDIENT-EXPORT">匯出</button></div>
+				<div><button id="INGREDIENT-RESET" class="unimportant">重置</button></div>
+			</div>
+		</div>
+
+		<div id="__panel_result" class="result board">
+			<div class="header">營養標示</div>
+			<div class="content">
+				<div id="RESULT-PRODUCT-NAME" class="product-name"></div>
+				<div id="RESULT-TABLE" class="table"></div>
+			</div>
+			<div class="footer">
+				<div><button id="RESULT-COPY">複製</button></div>
+				<!-- <div class="right"><button id="RESULT-BUILD" class="action">試算</button></div> -->
+			</div>
+		</div>
+	</div></div>
+	<div id="MOBILE-CHECK-ELEMENT" class="tabs">
+		<div id="MOBILE-TAB-CONTROL">
+			<div panel="__panel_config">包裝</div>
+			<div panel="__panel_search">搜尋</div>
+			<div panel="__panel_ingredient" default-focus>明細</div>
+			<div panel="__panel_result">標示</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!--
+<div id="header">
+	<h1 id="HEADER-TITLE"></h1>
+	<div class="action">
+		<div><button id="IMPORT-FILE">匯入</button></div>
+		<div><button id="EXPORT-FILE">匯出</button></div>
+	</div>
+</div>
+
+<div id="ingredient">
+	<div>
+		<div class="header">
+			<div><label>品名:</label><input id="PRODUCT-NAME" type="text" value="未命名" /></div>
+			<div><label>每份: (公克)</label><input id="COPY-WEIGHT" type="number" value="100" /></div>
+			<div><label>包裝: (份)</label><input id="COPIES" type="number" value="1" /></div>
+		</div>
+		<div class="field field-width">
+			<div class="delete">&nbsp;</div>	
+			<div class="no">編號</div>	
+			<div class="ingredient">材料</div>
+			<div class="gram">公克</div>
+		</div>
+		<div class="list">
+			<div id="ITEMS" class="items"></div>
+			<div class="button field-width">
+				<div class="delete"><span id="CLEAR-ALL">X</span></div>	
+				<div class="no">&nbsp;</div>	
+				<div class="ingredient"><button id="SHOW-SEARCH-DIALOG">增加</button></div>
+				<div class="gram"><button id="CALCULATE" class="action">試算</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="SEARCH-DIALOG" class="dialog dialog-search hidden">
+	<div>
+		<div>
+			<div class="close"><button id="SEARCH-DIALOG-CLOSE" class="close">X</button></div>
+			<h3>輸入新成份</h3>
+			<div class="content">
+				
+			</div>
+			<div class="footer">
+				<div><button id="SEARCH-DIALOG-CANCEL">放棄</button></div>
+				<div class="right"><button id="SEARCH-DIALOG-OK" class="action">確定</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="TOTAL-DIALOG" class="dialog dialog-total hidden">
+	<div>
+		<div>
+			<div class="close"><button id="TOTAL-DIALOG-CLOSE" class="close">X</button></div>
+			<h3>營養標示</h3>
+			<div class="content"><div id="TOTAL-DIALOG-TABLE" class="table"></div></div>
+			<div class="footer">
+				<div><button id="TOTAL-DIALOG-COPY">複製</button></div>
+				<div class="right"><button id="TOTAL-DIALOG-OK" class="action">關閉</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+
+<!-- ======================================================================= -->
+
+<textarea id="COPY-TEXT" class="no-see hidden"></textarea>
+<a id="DOWNLOAD-FILE" class="no-see hidden"></a>
+<input id="OPEN-FILE" type="file" class="no-see hidden" />
+
+<!-- ======================================================================= -->
+</body></html>

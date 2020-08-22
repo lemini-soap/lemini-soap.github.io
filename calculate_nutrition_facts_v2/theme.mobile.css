@@ -1,0 +1,233 @@
+@media only screen and (max-width: 760px) {
+/* ========================================================================== */
+
+body {
+	font-size : 14px;
+}
+
+input, textarea, select {
+	padding : 0 3px;
+	line-height : 28px;
+	font-size : 16px;
+}
+
+select {
+	height : 28px;
+}
+
+textarea {
+	line-height : 24px;
+}
+
+button {
+	line-height : 30px;
+}
+
+/* ========================================================================== */
+
+h1 {
+	display : none;
+}
+
+/* ========================================================================== */
+
+div.dashboard {
+	top : 0;
+}
+
+div.dashboard div.tabs {
+	display : block;
+	top : 0;
+}
+
+div.dashboard div.panels-container {
+	top : 50px;
+}
+
+div.dashboard div.panels-container div.panels {
+	margin : 0;
+	width : 100%;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.tabs > div {
+	display : flex;
+	line-height : 50px;
+	font-size : 16px;
+	text-align : center;
+	color : #ffffff;
+	background-color : #546E7A; /* 600 */
+}
+
+div.dashboard div.tabs div div {
+	width : 20%;
+}
+
+div.dashboard div.tabs div div.focus {
+	position : relative;
+	color : #FFCA28; /* 400 */
+}
+
+div.dashboard div.tabs div div.focus::after {
+	position : absolute;
+	left : 0;
+	right : 0;
+	bottom : 0;
+	border-style : solid;
+	border-width : 0 0 3px 0;
+	content : "";
+}
+
+
+/* ========================================================================== */
+
+div.dashboard div.panels > div {
+	display : none;
+	border-radius : 0;
+}
+
+div.dashboard div.panels > div.focus {
+	display : block;
+}
+
+div.dashboard div.panels div.config {
+	top : 0;
+	bottom : 0;
+}
+
+div.dashboard div.panels div.search {
+	top : 0;
+	right : 0;
+	bottom : 0;
+}
+
+div.dashboard div.panels div.ingredient {
+	top : 0;
+	left : 0;
+	right : 0;
+	bottom : 0;
+}
+
+div.dashboard div.panels div.result {
+	top : 0;
+	left : 0;
+	bottom : 0;
+}
+
+
+
+div.dashboard div.panels div.board div.header {
+	display : none;
+}
+
+div.dashboard div.panels div.board div.footer {
+	height : 50px;
+}
+
+div.dashboard div.panels div.board div.content {
+	top : 0;
+	bottom : 50px;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.config {
+	border-width : 0;
+}
+
+div.dashboard div.config div.title {
+	display : block;
+	line-height : 40px;
+	text-align : center;
+	color : #ffffff;
+	background-color : #A1887F; /* 300 */
+}
+
+div.dashboard div.config div.field {
+	height : auto;
+	display : block;
+	border-style : solid;
+	border-width : 0 0 1px 0;
+	border-color : #9E9E9E; /* 500 */
+}
+
+div.dashboard div.config div.field div {
+	margin : 0;
+	padding : 10px;
+	border-style : dashed;
+	border-width : 0 0 1px 0;
+	border-color : #BDBDBD; /* 400 */
+}
+
+div.dashboard div.config div.field div label {
+	font-size : inherit;
+}
+
+div.dashboard div.config div.field div input {
+	width : 60px;
+}
+
+div.dashboard div.config div.field div.product-name input {
+	width : 100%;
+}
+
+div.dashboard div.config div.field div.copies input {
+	width : 50px;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.search div.input {
+	height : 40px;
+	color : #ffffff;
+	background-color : #A1887F; /* 300 */
+}
+
+div.dashboard div.search div.list {
+	top : 40px;
+}
+
+div.dashboard div.search div.list div {
+	height : 69px;
+}
+
+div.dashboard div.search div.list div label {
+	font-size : 16px;
+}
+
+div.dashboard div.search div.list div p {
+	line-height : 18px;
+	font-size : inherit;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.ingredient div.field-width div.delete button {
+	margin-left : 5px;
+	width : 24px;
+	line-height : 24px;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.result div.content {
+	padding : 0;
+}
+
+div.dashboard div.result div.product-name {
+	color : #ffffff;
+	background-color : #A1887F; /* 300 */
+}
+
+div.dashboard div.result div.table > div {
+	border-width : 0;
+}
+
+div.dashboard div.result div.table > div:first-child {
+	border-top-width : 0;
+}
+
+
+/* ========================================================================== */
+}
