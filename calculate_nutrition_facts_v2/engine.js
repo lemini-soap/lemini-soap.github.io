@@ -244,6 +244,7 @@ const cnfConfig = {
 	,CopyWeight: null
 	,Copies: null
 	,init: function () {
+		const _self = this;
 		const E = cnfOp.Element;
 
 		this.ProductName = E.get_id('CONFIG-PRODUCT-NAME');
@@ -258,6 +259,19 @@ const cnfConfig = {
 		};
 		this.Copies.onblur = function () {
 			cnfStorage.update_field('copies', this.value);
+		};
+
+		this.ProductName.onkeyup = function () {
+			if (13 != event.keyCode) return;
+			this.blur();
+		};
+		this.CopyWeight.onkeyup = function () {
+			if (13 != event.keyCode) return;
+			this.blur();
+		};
+		this.Copies.onkeyup = function () {
+			if (13 != event.keyCode) return;
+			this.blur();
 		};
 
 		this.render();
@@ -499,6 +513,7 @@ const cnfIngredient = {
 				<div class="name">{NAME}</div>
 				<div class="gram"><input type="number" value="{GRAM}" min="0" /></div>
 			`;
+			let G;
 	
 			h = h.replace(/\{ID\}/g, id);
 			h = h.replace(/\{NO\}/g, this.Container.childNodes.length + 1);
@@ -518,10 +533,16 @@ const cnfIngredient = {
 				cnfStorage.remove(parseInt(P.getAttribute('row-index')));
 				_self.render();
 			};
-			E.get_node(div, 'DIV', 'gram').firstChild.onblur = function () {
+			G = E.get_node(div, 'DIV', 'gram').firstChild;
+			G.onblur = function () {
 				const P = this.parentNode.parentNode;
 	
 				cnfStorage.update(parseInt(P.getAttribute('row-index')), this.value);
+			};
+			G.onkeyup = function () {
+				if (13 != event.keyCode) return;
+				
+				this.blur();
 			};
 	
 			this.Container.appendChild(div);
