@@ -220,13 +220,10 @@ div.dashboard div.result div.product-name {
 	background-color : #A1887F; /* 300 */
 }
 
-div.dashboard div.result div.table > div {
-	border-width : 0;
+div.dashboard div.result div.table {
+	margin : 5px;
 }
 
-div.dashboard div.result div.table > div:first-child {
-	border-top-width : 0;
-}
 
 
 /* ========================================================================== */
