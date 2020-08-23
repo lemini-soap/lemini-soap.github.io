@@ -21,6 +21,8 @@ textarea {
 
 button {
 	line-height : 30px;
+	padding : 0 10px;
+	font-size : 16px;
 }
 
 /* ========================================================================== */
@@ -37,11 +39,11 @@ div.dashboard {
 
 div.dashboard div.tabs {
 	display : block;
-	top : 0;
+	bottom : 0;
 }
 
 div.dashboard div.panels-container {
-	top : 50px;
+	bottom : 50px;
 }
 
 div.dashboard div.panels-container div.panels {
@@ -121,16 +123,19 @@ div.dashboard div.panels div.board div.header {
 	display : none;
 }
 
-div.dashboard div.panels div.board div.footer {
-	height : 50px;
-}
-
 div.dashboard div.panels div.board div.content {
 	top : 0;
-	bottom : 50px;
+}
+
+div.dashboard div.panels div.board div.footer > div {
+	padding-bottom : 10px;
 }
 
 /* ========================================================================== */
+
+div.dashboard div.panels div.config {
+	background-color : #EEEEEE; /* 200 */
+}
 
 div.dashboard div.config {
 	border-width : 0;
@@ -139,6 +144,8 @@ div.dashboard div.config {
 div.dashboard div.config div.title {
 	display : block;
 	line-height : 40px;
+	font-size : 18px;
+	font-weight : bold;
 	text-align : center;
 	color : #ffffff;
 	background-color : #A1887F; /* 300 */
@@ -147,6 +154,7 @@ div.dashboard div.config div.title {
 div.dashboard div.config div.field {
 	height : auto;
 	display : block;
+	background-color : #FAFAFA; /* 100 */
 	border-style : solid;
 	border-width : 0 0 1px 0;
 	border-color : #9E9E9E; /* 500 */
@@ -216,8 +224,10 @@ div.dashboard div.result div.content {
 }
 
 div.dashboard div.result div.product-name {
+	font-size : 18px;
 	color : #ffffff;
 	background-color : #A1887F; /* 300 */
+	overflow : hidden;
 }
 
 div.dashboard div.result div.table {

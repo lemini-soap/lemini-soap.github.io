@@ -6,12 +6,12 @@
 <meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#558B2F" />
-<link rel="stylesheet" href="theme.css?v=1.0.1" />
-<link rel="stylesheet" href="theme.mobile.css?v=1.0.1" />
+<link rel="stylesheet" href="theme.css?v=1.0.2" />
+<link rel="stylesheet" href="theme.mobile.css?v=1.0.2" />
 <title>CALCULATE_NUTRITION_FACTS</title>
 <script src="database.js?v=1.0.0"></script>
 <script src="config.js?v=1.0.0"></script>
-<script src="engine.js?v=1.0.1"></script>
+<script src="engine.js?v=1.0.2"></script>
 </head><body>
 <!-- ======================================================================= -->
 
@@ -32,7 +32,7 @@
 			<div class="header"><span id="SEARCH-COUNT"></span>材料庫</div>
 			<div class="content">
 				<div class="input">
-					<div class="keyword"><input id="SEARCH-KEYWORD" type="search" value="" /></div>
+					<div class="keyword"><input id="SEARCH-KEYWORD" type="search" value="" placeholder="輸入材料關鍵字" /></div>
 					<div class="button"><button id="SEARCH-ACTION">搜尋</button></div>
 				</div>
 				<div id="SEARCH-LIST" class="list"></div>
@@ -55,9 +55,10 @@
 				</div>
 			</div>
 			<div class="footer">
+				<div><button id="INGREDIENT-RESET" class="unimportant">重置</button></div>
 				<div><button id="INGREDIENT-IMPORT">匯入</button></div>
 				<div><button id="INGREDIENT-EXPORT">匯出</button></div>
-				<div><button id="INGREDIENT-RESET" class="unimportant">重置</button></div>
+				<div><button id="INGREDIENT-NEW" tab-index="1">增加</button></div>
 			</div>
 		</div>
 
@@ -82,78 +83,6 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-<!--
-<div id="header">
-	<h1 id="HEADER-TITLE"></h1>
-	<div class="action">
-		<div><button id="IMPORT-FILE">匯入</button></div>
-		<div><button id="EXPORT-FILE">匯出</button></div>
-	</div>
-</div>
-
-<div id="ingredient">
-	<div>
-		<div class="header">
-			<div><label>品名:</label><input id="PRODUCT-NAME" type="text" value="未命名" /></div>
-			<div><label>每份: (公克)</label><input id="COPY-WEIGHT" type="number" value="100" /></div>
-			<div><label>包裝: (份)</label><input id="COPIES" type="number" value="1" /></div>
-		</div>
-		<div class="field field-width">
-			<div class="delete">&nbsp;</div>	
-			<div class="no">編號</div>	
-			<div class="ingredient">材料</div>
-			<div class="gram">公克</div>
-		</div>
-		<div class="list">
-			<div id="ITEMS" class="items"></div>
-			<div class="button field-width">
-				<div class="delete"><span id="CLEAR-ALL">X</span></div>	
-				<div class="no">&nbsp;</div>	
-				<div class="ingredient"><button id="SHOW-SEARCH-DIALOG">增加</button></div>
-				<div class="gram"><button id="CALCULATE" class="action">試算</button></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<div id="SEARCH-DIALOG" class="dialog dialog-search hidden">
-	<div>
-		<div>
-			<div class="close"><button id="SEARCH-DIALOG-CLOSE" class="close">X</button></div>
-			<h3>輸入新成份</h3>
-			<div class="content">
-				
-			</div>
-			<div class="footer">
-				<div><button id="SEARCH-DIALOG-CANCEL">放棄</button></div>
-				<div class="right"><button id="SEARCH-DIALOG-OK" class="action">確定</button></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<div id="TOTAL-DIALOG" class="dialog dialog-total hidden">
-	<div>
-		<div>
-			<div class="close"><button id="TOTAL-DIALOG-CLOSE" class="close">X</button></div>
-			<h3>營養標示</h3>
-			<div class="content"><div id="TOTAL-DIALOG-TABLE" class="table"></div></div>
-			<div class="footer">
-				<div><button id="TOTAL-DIALOG-COPY">複製</button></div>
-				<div class="right"><button id="TOTAL-DIALOG-OK" class="action">關閉</button></div>
-			</div>
-		</div>
-	</div>
-</div>
--->
 
 
 <!-- ======================================================================= -->

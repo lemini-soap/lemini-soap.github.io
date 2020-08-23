@@ -234,6 +234,7 @@ div.dashboard div.panels div.board div.footer {
 	bottom : 0;
 	height : 60px;
 	display : flex;
+	justify-content : flex-end;
 	align-items : center;
 	background-color : #EEEEEE; /* 200 */
 }
@@ -250,7 +251,7 @@ div.dashboard div.panels div.board div.footer::after {
 }
 
 div.dashboard div.panels div.board div.footer > div {
-	margin-left : 10px;
+	margin-right : 10px;
 }
 
 div.dashboard div.panels div.board div.footer > div.right {

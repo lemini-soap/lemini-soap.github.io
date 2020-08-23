@@ -431,6 +431,9 @@ const cnfIngredient = {
 
 		this.List.init(this);
 
+		E.get_id('INGREDIENT-NEW').onclick = function () {
+			_self.new(this);
+		};
 		E.get_id('INGREDIENT-IMPORT').onclick = function () {
 			_self.import();
 		};
@@ -446,6 +449,10 @@ const cnfIngredient = {
 		};
 	
 		this.List.render();
+	}
+	,new: function (Btn) {
+		if (cnfMobile.is_yes()) cnfMobile.TabCtrl.click(parseInt(Btn.getAttribute('tab-index')));
+		cnfSearch.Keyword.focus();
 	}
 	,import: function () {
 		const F = cnfOp.Element.get_id('OPEN-FILE');
