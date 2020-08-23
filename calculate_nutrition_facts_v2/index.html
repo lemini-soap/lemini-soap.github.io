@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh"><head>
 <meta charset="utf-8" />
-<meta http-equiv="Cache-Control" content="no-cache" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <meta name="theme-color" content="#558B2F" />
-<link rel="stylesheet" href="theme.css?v=1.0.2" />
-<link rel="stylesheet" href="theme.mobile.css?v=1.0.3" />
+<link rel="stylesheet" href="theme.css?v=1.0.4" />
+<link rel="stylesheet" href="theme.mobile.css?v=1.0.4" />
 <title>CALCULATE_NUTRITION_FACTS</title>
 <script src="database.js?v=1.0.0"></script>
 <script src="config.js?v=1.0.0"></script>
-<script src="engine.js?v=1.0.2"></script>
+<script src="engine.js?v=1.0.4"></script>
 </head><body>
 <!-- ======================================================================= -->
 
 <h1 id="HEADER-TITLE"></h1>
 
-<div class="dashboard">
+<div id="MOBILE-DASHBOARD" class="dashboard">
 	<div class="panels-container"><div class="panels">
 		<div id="__panel_config" class="config">
 			<div class="title">包裝設定</div>
@@ -35,7 +33,7 @@
 					<div class="keyword"><input id="SEARCH-KEYWORD" type="search" value="" placeholder="輸入材料關鍵字" /></div>
 					<div class="button"><button id="SEARCH-ACTION">搜尋</button></div>
 				</div>
-				<div id="SEARCH-LIST" class="list"></div>
+				<div id="SEARCH-LIST" class="list" data-template-item="__search_item_template"></div>
 			</div>
 			<div class="footer">
 				<div><button id="SEARCH-APPEND">加入</button></div>
@@ -51,14 +49,13 @@
 					<div class="name">材料</div>
 					<div class="gram">公克</div>
 				</div>
-				<div id="INGREDIENT-LIST" class="list">
-				</div>
+				<div id="INGREDIENT-LIST" class="list" data-template-item="__ingredient_item_template"></div>
 			</div>
 			<div class="footer">
 				<div><button id="INGREDIENT-RESET" class="unimportant">重置</button></div>
 				<div><button id="INGREDIENT-IMPORT">匯入</button></div>
 				<div><button id="INGREDIENT-EXPORT">匯出</button></div>
-				<div><button id="INGREDIENT-NEW" tab-index="1">增加</button></div>
+				<div><button id="INGREDIENT-NEW">增加</button></div>
 			</div>
 		</div>
 
@@ -66,7 +63,7 @@
 			<div class="header">營養標示</div>
 			<div class="content">
 				<div id="RESULT-PRODUCT-NAME" class="product-name"></div>
-				<div id="RESULT-TABLE" class="table"></div>
+				<div id="RESULT-TABLE" class="table" data-template-title="__result_information_title_template" data-template-item="__result_information_item_template"></div>
 			</div>
 			<div class="footer">
 				<div><button id="RESULT-COPY">複製</button></div>
@@ -76,14 +73,53 @@
 	</div></div>
 	<div id="MOBILE-CHECK-ELEMENT" class="tabs">
 		<div id="MOBILE-TAB-CONTROL">
-			<div panel="__panel_config">包裝</div>
-			<div panel="__panel_search">搜尋</div>
-			<div panel="__panel_ingredient" default-focus>明細</div>
-			<div panel="__panel_result">標示</div>
+			<div data-tab-id="config" data-panel="__panel_config">包裝</div>
+			<div data-tab-id="search" data-panel="__panel_search">搜尋</div>
+			<div data-tab-id="ingredient" data-panel="__panel_ingredient" data-default-focus>明細</div>
+			<div data-tab-id="result" data-panel="__panel_result">標示</div>
 		</div>
 	</div>
 </div>
 
+
+<!-- ======================================================================= -->
+
+<div class="no-see">
+	<div id="__search_item_template" data-element="DIV">
+		<label>{NAME}</label>
+		<p>{DESCRIPTION}</p>
+	</div>
+
+	<div id="__ingredient_item_template" data-element="DIV" data-class="field-width">
+		<div class="delete"><button>X</button></div>
+		<div class="no font-code">#{NO}</div>
+		<div class="name">{NAME}</div>
+		<div class="gram"><input type="number" value="{GRAM}" min="0" /></div>
+	</div>
+
+	<div id="__result_information_title_template">
+		<div class="title bottom-border">
+			<div>營養標示</div>
+		 </div>
+		 <div class="copy-weight">
+			<div>每一份量 <span class="font-code">{COPY_WEIGHT}</span> 公克</div>
+		 </div>
+		 <div class="copies bottom-border">
+			<div>本包裝含 <span class="font-code">{COPIES}</span> 份</div>
+		 </div>
+		 <div class="field bottom-border">
+			<div>每份</div>
+			<div>每 <span class="font-code">100</span> 公克</div>
+		 </div>
+	</div>
+	<div id="__result_information_item_template">
+		<div class="row">
+			<div>{TITLE}</div>
+			<div><span class="font-code">{COPY}</span> {UNIT}</div>
+			<div><span class="font-code">{ONE_HUNDRED}</span> {UNIT}</div>
+		 </div>
+	</div>
+</div>
 
 <!-- ======================================================================= -->
 

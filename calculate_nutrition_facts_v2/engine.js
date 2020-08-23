@@ -334,6 +334,7 @@ const cnfSearch = {
 
 	,List: {
 		Container: null
+		,Tpl: null
 		,Count: null
 		,Rows: []
 		,focus_index: -1
@@ -345,6 +346,7 @@ const cnfSearch = {
 			this.Owner = Owner;
 
 			this.Container = E.get_id('SEARCH-LIST');
+			this.Tpl = E.get_id(this.Container.getAttribute('data-template-item'));
 			this.Count = E.get_id('SEARCH-COUNT');
 		}
 		,clear: function () {
@@ -388,26 +390,24 @@ const cnfSearch = {
 		}
 		,insert: function (row_index, id, Item) {
 			const _self = this;
-			const div = cnfOp.Element.create('DIV');
 			const R = new RegExp(this.keyword, 'g');
 			const m = '<mark>' + this.keyword + '</mark>';
-			let h = `
-				<label>{NAME}</label>
-				<p>{DESCRIPTION}</p>
-			`;
+			const div = cnfOp.Element.create(this.Tpl.getAttribute('data-element'));
+			let h = this.Tpl.innerHTML;
 
 			h = h.replace(/\{ID\}/g, id);
 			h = h.replace(/\{NO\}/g, row_index + 1);
 			h = h.replace(/\{NAME\}/g, Item.name.replace(R, m));
 			h = h.replace(/\{DESCRIPTION\}/g, Item.description.replace(R, m));
 			div.innerHTML = h;
+			div.className = this.Tpl.getAttribute('data-class');
 
-			div.setAttribute('row-index', row_index);
-			div.setAttribute('item-id', id);
+			div.setAttribute('data-row-index', row_index);
+			div.setAttribute('data-item-id', id);
 			if (cnfStorage.is_has_id(id)) div.classList.add('used');
 
 			div.onclick = function () {
-				_self.click(parseInt(this.getAttribute('row-index')), this.getAttribute('item-id'));
+				_self.click(parseInt(this.getAttribute('data-row-index')), this.getAttribute('data-item-id'));
 			};
 
 			this.Container.appendChild(div);
@@ -451,7 +451,7 @@ const cnfIngredient = {
 		this.List.render();
 	}
 	,new: function (Btn) {
-		if (cnfMobile.is_yes()) cnfMobile.TabCtrl.click(parseInt(Btn.getAttribute('tab-index')));
+		if (cnfMobile.is_yes()) cnfMobile.TabCtrl.change_to('search');
 		cnfSearch.Keyword.focus();
 	}
 	,import: function () {
@@ -495,12 +495,14 @@ const cnfIngredient = {
 
 	,List: {
 		Container: null
+		,Tpl: null
 		,init: function (Owner) {
 			const E = cnfOp.Element;
 
 			this.Owner = Owner;
 
 			this.Container = E.get_id('INGREDIENT-LIST');
+			this.Tpl = E.get_id(this.Container.getAttribute('data-template-item'));
 		}
 		,render: function () {
 			let i = 0;
@@ -513,38 +515,33 @@ const cnfIngredient = {
 		,insert: function (id, gram) {
 			const _self = this;
 			const E = cnfOp.Element;
-			const div = E.create('DIV');
-			let h = `
-				<div class="delete"><button>X</button></div>
-				<div class="no font-code">#{NO}</div>
-				<div class="name">{NAME}</div>
-				<div class="gram"><input type="number" value="{GRAM}" min="0" /></div>
-			`;
+			const div = E.create(this.Tpl.getAttribute('data-element'));
+			let h = this.Tpl.innerHTML;
 			let G;
 	
 			h = h.replace(/\{ID\}/g, id);
 			h = h.replace(/\{NO\}/g, this.Container.childNodes.length + 1);
 			h = h.replace(/\{NAME\}/g, cnfDatabase.Items[id].name);
 			h = h.replace(/\{GRAM\}/g, gram);
-			div.classList.add('field-width');
 			div.innerHTML = h;
+			div.className = this.Tpl.getAttribute('data-class');
 	
-			div.setAttribute('row-index', this.Container.childNodes.length);
-			div.setAttribute('item-id', id);
+			div.setAttribute('data-row-index', this.Container.childNodes.length);
+			div.setAttribute('data-item-id', id);
 	
 			E.get_node(div, 'DIV', 'delete').firstChild.onclick = function () {
 				const P = this.parentNode.parentNode;
 	
 				if (!confirm('移除 "'+ E.get_node(P, 'DIV', 'name').textContent +'" 嗎？')) return;
 	
-				cnfStorage.remove(parseInt(P.getAttribute('row-index')));
+				cnfStorage.remove(parseInt(P.getAttribute('data-row-index')));
 				_self.render();
 			};
 			G = E.get_node(div, 'DIV', 'gram').firstChild;
 			G.onblur = function () {
 				const P = this.parentNode.parentNode;
 	
-				cnfStorage.update(parseInt(P.getAttribute('row-index')), this.value);
+				cnfStorage.update(parseInt(P.getAttribute('data-row-index')), this.value);
 			};
 			G.onkeyup = function () {
 				if (13 != event.keyCode) return;
@@ -574,12 +571,18 @@ const cnfIngredient = {
 const cnfResult = {
 	ProductName: null
 	,Table: null
+	,Tpl: {
+		info_title: ''
+		,info_item: ''
+	}
 	,init: function () {
 		const E = cnfOp.Element;
 		const _self = this;
 
 		this.ProductName = E.get_id('RESULT-PRODUCT-NAME');
 		this.Table = E.get_id('RESULT-TABLE');
+		this.Tpl.info_title = E.get_id(this.Table.getAttribute('data-template-title')).innerHTML;
+		this.Tpl.info_item = E.get_id(this.Table.getAttribute('data-template-item')).innerHTML;
 
 		E.get_id('RESULT-COPY').onclick = function () {
 			_self.copy();
@@ -588,26 +591,8 @@ const cnfResult = {
 	,refresh: function () {
 		this.ProductName.textContent = cnfStorage.Data.product_name;
 		this.Table.innerHTML = this.parse(
-			`<div class="title bottom-border">
-				<div>營養標示</div>
-			 </div>
-			 <div class="copy-weight">
-				<div>每一份量 <span class="font-code">{COPY_WEIGHT}</span> 公克</div>
-			 </div>
-			 <div class="copies bottom-border">
-				<div>本包裝含 <span class="font-code">{COPIES}</span> 份</div>
-			 </div>
-			 <div class="field bottom-border">
-				<div>每份</div>
-				<div>每 <span class="font-code">100</span> 公克</div>
-			 </div>
-			`
-			,`<div class="row">
-				<div>{TITLE}</div>
-				<div><span class="font-code">{COPY}</span> {UNIT}</div>
-				<div><span class="font-code">{ONE_HUNDRED}</span> {UNIT}</div>
-			 </div>
-			`
+			this.Tpl.info_title
+			,this.Tpl.info_item
 		);
 	}
 	,copy: function () {
@@ -654,11 +639,20 @@ const cnfResult = {
 const cnfMobile = {
 	CheckElement: null
 	,init: function () {
+		const _self = this;
 		const E = cnfOp.Element;
 
 		this.TabCtrl.init(this);
 
 		this.CheckElement = E.get_id('MOBILE-CHECK-ELEMENT');
+
+		setTimeout(function () {
+			const md = E.get_id('MOBILE-DASHBOARD');
+
+			if (!_self.is_yes()) return;
+
+			md.style.height = md.clientHeight + 'px';
+		}, 250);
 	}
 	,is_yes: function () {
 		return ('none' != getComputedStyle(this.CheckElement, '').getPropertyValue('display'));
@@ -670,6 +664,7 @@ const cnfMobile = {
 		Container: null
 		,Buttons: []
 		,Panels: []
+		,tab_id_to_row: {}
 		,focus_index: -1
 		,init: function (Owner) {
 			const E = cnfOp.Element;
@@ -689,15 +684,16 @@ const cnfMobile = {
 			for (i=0; i<Chds.length; i++) {
 				if ('DIV' != Chds[i].nodeName) continue;
 
-				Chds[i].setAttribute('row-index', this.Panels.length);
-				if (Chds[i].hasAttribute('default-focus')) this.focus_index = this.Panels.length;
+				Chds[i].setAttribute('data-row-index', this.Panels.length);
+				if (Chds[i].hasAttribute('data-default-focus')) this.focus_index = this.Panels.length;
 
 				Chds[i].onclick = function () {
-					_self.click(parseInt(this.getAttribute('row-index')));
+					_self.click(parseInt(this.getAttribute('data-row-index')));
 				};
 
+				this.tab_id_to_row[Chds[i].getAttribute('data-tab-id')] = this.Buttons.length;
 				this.Buttons.push(Chds[i]);
-				this.Panels.push(E.get_id(Chds[i].getAttribute('panel')));
+				this.Panels.push(E.get_id(Chds[i].getAttribute('data-panel')));
 			}
 			if (-1 !== this.focus_index) {
 				this.Buttons[this.focus_index].classList.add('focus');
@@ -715,6 +711,11 @@ const cnfMobile = {
 			this.focus_index = row_index;
 			this.Buttons[this.focus_index].classList.add('focus');
 			this.Panels[this.focus_index].classList.add('focus');
+		}
+		,change_to: function (id) {
+			if (!this.tab_id_to_row.hasOwnProperty(id)) return;
+
+			this.click(this.tab_id_to_row[id]);
 		}
 	}
 };

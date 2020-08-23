@@ -3,6 +3,7 @@
 
 body {
 	font-size : 14px;
+	overflow : hidden;
 }
 
 input, textarea, select {
@@ -35,6 +36,8 @@ h1 {
 
 div.dashboard {
 	top : 0;
+	bottom : auto;
+	height : 100vh;
 }
 
 div.dashboard div.tabs {
