@@ -651,7 +651,7 @@ const cnfMobile = {
 
 			if (!_self.is_yes()) return;
 
-			md.style.height = md.clientHeight + 'px';
+			md.style.height = window.innerHeight + 'px';
 		}, 250);
 	}
 	,is_yes: function () {
