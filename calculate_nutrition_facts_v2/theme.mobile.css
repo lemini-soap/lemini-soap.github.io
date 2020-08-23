@@ -55,7 +55,6 @@ div.dashboard div.panels-container div.panels {
 
 div.dashboard div.tabs > div {
 	display : flex;
-	line-height : 50px;
 	font-size : 16px;
 	text-align : center;
 	color : #ffffff;
@@ -64,6 +63,7 @@ div.dashboard div.tabs > div {
 
 div.dashboard div.tabs div div {
 	width : 20%;
+	line-height : 50px;
 }
 
 div.dashboard div.tabs div div.focus {
@@ -74,10 +74,13 @@ div.dashboard div.tabs div div.focus {
 div.dashboard div.tabs div div.focus::after {
 	position : absolute;
 	left : 0;
+	top : 0;
 	right : 0;
-	bottom : 0;
+	margin : 0 auto;
+	width : 0;
 	border-style : solid;
-	border-width : 0 0 3px 0;
+	border-width : 8px 10px;
+	border-color : #EEEEEE transparent transparent transparent; /* 200 */
 	content : "";
 }
 
