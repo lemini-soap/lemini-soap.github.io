@@ -4,16 +4,20 @@
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <meta name="theme-color" content="#558B2F" />
-<link rel="stylesheet" href="theme.css?v=1.0.4" />
-<link rel="stylesheet" href="theme.mobile.css?v=1.0.4" />
+<link rel="stylesheet" href="theme.css?v=1.0.6" />
+<link rel="stylesheet" href="theme.mobile.css?v=1.0.6" />
+<link rel="stylesheet" href="theme.print.css?v=1.0.6" />
 <title>CALCULATE_NUTRITION_FACTS</title>
-<script src="database.js?v=1.0.0"></script>
-<script src="config.js?v=1.0.0"></script>
-<script src="engine.js?v=1.0.5"></script>
+<script src="database.js?v=1.0.6"></script>
+<script src="config.js?v=1.0.6"></script>
+<script src="engine.js?v=1.0.6"></script>
 </head><body>
 <!-- ======================================================================= -->
 
-<h1 id="HEADER-TITLE"></h1>
+<div class="title-bar">
+	<div id="HEADER-TITLE" class="title"></div>
+	<div class="button"><button id="HEADER-SHOW-ABOUT-DIALOG">關於</button></div>
+</div>
 
 <div id="MOBILE-DASHBOARD" class="dashboard">
 	<div class="panels-container"><div class="panels">
@@ -66,8 +70,18 @@
 				<div id="RESULT-TABLE" class="table" data-template-title="__result_information_title_template" data-template-item="__result_information_item_template"></div>
 			</div>
 			<div class="footer">
+				<div><button id="RESULT-PRINT" class="unimportant" onclick="window.print();">列印</button></div>
 				<div><button id="RESULT-COPY">複製</button></div>
-				<!-- <div class="right"><button id="RESULT-BUILD" class="action">試算</button></div> -->
+			</div>
+		</div>
+
+		<div id="__panel_about" class="about board">
+			<div class="header">關於本軟體</div>
+			<div class="content">
+				<div id="ABOUT-CONTENT" data-template-item="__about_content_template"></div>
+			</div>
+			<div class="footer">
+				<div class="right"><button onclick="this.parentNode.parentNode.parentNode.style.display='none';">關閉</button></div>
 			</div>
 		</div>
 	</div></div>
@@ -77,6 +91,7 @@
 			<div data-tab-id="search" data-panel="__panel_search">搜尋</div>
 			<div data-tab-id="ingredient" data-panel="__panel_ingredient" data-default-focus>明細</div>
 			<div data-tab-id="result" data-panel="__panel_result">標示</div>
+			<div data-tab-id="about" data-panel="__panel_about">關於</div>
 		</div>
 	</div>
 </div>
@@ -112,12 +127,41 @@
 			<div>每 <span class="font-code">100</span> 公克</div>
 		 </div>
 	</div>
+
 	<div id="__result_information_item_template">
 		<div class="row">
 			<div>{TITLE}</div>
 			<div><span class="font-code">{COPY}</span> {UNIT}</div>
 			<div><span class="font-code">{ONE_HUNDRED}</span> {UNIT}</div>
 		 </div>
+	</div>
+
+	<div id="__about_content_template">
+		<div class="row">
+			<label>注意事項:</label>
+			<p>試算結果僅供參考，實際數值仍須經專業機構進行檢驗</p>
+		</div>
+		<div class="row">
+			<label>使用方法:</label>
+			<ol>
+				<li>從<b>搜尋(材料庫)</b>找到材料加入</li>
+				<li>在<b>明細(用料明細)</b>填入製作時的所有用量(公克)</li>
+				<li>在<b>包裝(下排)</b>輸入每份幾公克，每包裝幾份</li>
+				<li>在<b>標示(營養標示)</b>查看試算結果</li>
+			</ol>
+		</div>
+		<div class="row">
+			<label>資料庫來源:</label>
+			<p><a href="{DATABASE_HOMEPAGE}" target="_blank">{DATABASE_OWNER}</a></p>
+		</div>
+		<div class="row">
+			<label>資料庫版本:</label>
+			<p>{DATABASE_VERSION}<br />　　<a href="{DATABASE_URL}" target="_blank">下載檔案</a></p>
+		</div>
+		<div class="row">
+			<label></label>
+			<p></p>
+		</div>
 	</div>
 </div>
 

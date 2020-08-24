@@ -234,6 +234,9 @@ const cnfHeader = {
 		document.title = CNF_CONFIG.title;
 
 		E.get_id('HEADER-TITLE').textContent = CNF_CONFIG.title;
+		E.get_id('HEADER-SHOW-ABOUT-DIALOG').onclick = function () {
+			E.get_id('__panel_about').style.display = 'block';
+		};
 	}
 };
 
@@ -636,6 +639,31 @@ const cnfResult = {
 
 // =============================================================================
 
+const cnfAbout = {
+	Container: null
+	,Tpl: null
+	,init: function () {
+		const E = cnfOp.Element;
+
+		this.Container = E.get_id('ABOUT-CONTENT');
+		this.Tpl = E.get_id(this.Container.getAttribute('data-template-item'));
+
+		this.render();
+	}
+	,render: function () {
+		let h = this.Tpl.innerHTML;
+
+		h = h.replace(/\{DATABASE_OWNER\}/g, CNF_SOURCE_TABLE.owner);
+		h = h.replace(/\{DATABASE_HOMEPAGE\}/g, CNF_SOURCE_TABLE.homepage);
+		h = h.replace(/\{DATABASE_VERSION\}/g, CNF_SOURCE_TABLE.version);
+		h = h.replace(/\{DATABASE_URL\}/g, CNF_SOURCE_TABLE.url);
+
+		this.Container.innerHTML = h;
+	}
+}
+
+// =============================================================================
+
 const cnfMobile = {
 	CheckElement: null
 	,init: function () {
@@ -732,6 +760,7 @@ window.addEventListener('load', function () {
 	cnfConfig.init();
 	cnfSearch.init();
 	cnfIngredient.init();
+	cnfAbout.init();
 });
 
 // =============================================================================

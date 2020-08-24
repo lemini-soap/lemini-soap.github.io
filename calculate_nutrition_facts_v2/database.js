@@ -2,7 +2,9 @@
 // =============================================================================
 
 const CNF_SOURCE_TABLE = {
-	version: '台灣食品成分資料庫2019版(UPDATE1)1090401'
+	owner: '衛生福利部食品藥物管理署 - 食品藥物消費者專區'
+	,homepage: 'https://consumer.fda.gov.tw/'
+	,version: '台灣食品成分資料庫2019版(UPDATE1)1090401'
 	,url: 'https://consumer.fda.gov.tw/Files/other/%E5%8F%B0%E7%81%A3%E9%A3%9F%E5%93%81%E6%88%90%E5%88%86%E8%B3%87%E6%96%99%E5%BA%AB2019%E7%89%88(UPDATE1)1090401.xlsx?fbclid=IwAR1S21ynQs0H1DdpRYhdJOUVc3WfkF-coeoDnGvhnYs8MY80cocV4xTb3xo'
 	,copy: 100.0
 	,unit: '公克'

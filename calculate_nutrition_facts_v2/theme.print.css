@@ -1,0 +1,113 @@
+@media only print {
+/* ========================================================================== */
+
+body { 
+	font-size : 12pt;
+	color : #000000;
+}
+
+/* ========================================================================== */
+
+*.no-see {
+	display : none;
+}
+
+/* ========================================================================== */
+
+div.title-bar {
+	display : none;
+}
+
+div.dashboard div.tabs {
+	display : none;
+}
+
+div.dashboard div.panels-container div.panels > div {
+	display : none;
+}
+
+div.dashboard div.panels-container div.panels div.result {
+	display : block;
+}
+
+div.dashboard div.panels-container div.panels div.result div.header {
+	display : none;
+}
+
+div.dashboard div.panels-container div.panels div.result div.footer {
+	display : none;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.result {
+	width : 8cm;
+}
+
+div.dashboard div.result div.product-name {
+	font-size : 12pt;
+	font-weight : bold;
+	text-align : center;
+}
+
+div.dashboard div.result div.table {
+	margin-top : 5px;
+	line-height : 22px;
+	font-size : 10pt;
+	border-style : solid;
+	border-width : 2px;
+	border-color : #000000;
+}
+
+div.dashboard div.result div.table > div {
+	display : flex;
+}
+
+div.dashboard div.result div.table > div.bottom-border {
+	border-style : solid;
+	border-width : 0 0 2px 0;
+	border-color : #000000;
+}
+
+div.dashboard div.result div.table div div {
+	padding : 0 5px;
+	text-align : right;
+	box-sizing : border-box;
+}
+
+div.dashboard div.result div.table div span {
+	display : inline-block;
+	vertical-align : top;
+}
+
+div.dashboard div.result div.table div.title div {
+	width : 100%;
+	line-height : 24px;
+	text-align : center;
+}
+
+div.dashboard div.result div.table div.field div:nth-child(1) {
+	width : 65%;
+}
+
+div.dashboard div.result div.table div.field div:nth-child(2) {
+	width : 35%;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(1) {
+	width : 30%;
+	text-align : left;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(2) {
+	width : 35%;
+}
+
+div.dashboard div.result div.table div.row div:nth-child(3) {
+	width : 35%;
+}
+
+
+/* ========================================================================== */
+}
+	

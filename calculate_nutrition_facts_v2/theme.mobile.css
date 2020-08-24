@@ -28,7 +28,7 @@ button {
 
 /* ========================================================================== */
 
-h1 {
+div.title-bar {
 	display : none;
 }
 
@@ -77,13 +77,10 @@ div.dashboard div.tabs div div.focus {
 div.dashboard div.tabs div div.focus::after {
 	position : absolute;
 	left : 0;
-	top : 0;
+	top : 1px;
 	right : 0;
-	margin : 0 auto;
-	width : 0;
 	border-style : solid;
-	border-width : 8px 10px;
-	border-color : #EEEEEE transparent transparent transparent; /* 200 */
+	border-width : 4px 0 0 0;
 	content : "";
 }
 
@@ -123,6 +120,11 @@ div.dashboard div.panels div.result {
 	bottom : 0;
 }
 
+div.dashboard div.panels div.about {
+	top : 0;
+	bottom : 0;
+}
+
 
 
 div.dashboard div.panels div.board div.header {
@@ -154,7 +156,7 @@ div.dashboard div.config div.title {
 	font-weight : bold;
 	text-align : center;
 	color : #ffffff;
-	background-color : #A1887F; /* 300 */
+	background-color : #795548; /* 500 */
 }
 
 div.dashboard div.config div.field {
@@ -195,7 +197,7 @@ div.dashboard div.config div.field div.copies input {
 div.dashboard div.search div.input {
 	height : 40px;
 	color : #ffffff;
-	background-color : #A1887F; /* 300 */
+	background-color : #795548; /* 500 */
 }
 
 div.dashboard div.search div.list {
@@ -217,6 +219,10 @@ div.dashboard div.search div.list div p {
 
 /* ========================================================================== */
 
+div.dashboard div.ingredient div.field{
+	background-color : #795548; /* 500 */
+}
+
 div.dashboard div.ingredient div.field-width div.delete button {
 	margin-left : 5px;
 	width : 24px;
@@ -232,7 +238,7 @@ div.dashboard div.result div.content {
 div.dashboard div.result div.product-name {
 	font-size : 18px;
 	color : #ffffff;
-	background-color : #A1887F; /* 300 */
+	background-color : #795548; /* 500 */
 	overflow : hidden;
 }
 
@@ -240,7 +246,56 @@ div.dashboard div.result div.table {
 	margin : 5px;
 }
 
+/* ========================================================================== */
 
+div.dashboard div.panels div.about div.header {
+	display : block;
+	line-height : 40px;
+	font-size : 18px;
+	background-color : #795548; /* 500 */
+}
+
+div.dashboard div.panels div.about div.footer {
+	display : none;
+}
+
+
+div.dashboard div.panels div.about div.content {
+	top : 40px;
+	bottom : 0;
+	padding : 10px;
+}
+
+/* ========================================================================== */
+
+div.dashboard div.about div.content {
+	padding : 10px;
+}
+
+div.dashboard div.about div.content > div {
+	margin : 0;
+	width : auto;
+	line-height : 22px;
+}
+
+div.dashboard div.about div.content div div.row {
+	display : block;
+}
+
+div.dashboard div.about div.content div div.row label {
+	width : auto;
+	color : #C2185B; /* 700 */
+}
+
+div.dashboard div.about div.content div div.row p {
+	width : auto;
+	padding-left : 10px;
+}
+
+div.dashboard div.about div.content div div.row ol {
+	margin-left : 25px;
+	width : auto;
+}
 
 /* ========================================================================== */
 }
