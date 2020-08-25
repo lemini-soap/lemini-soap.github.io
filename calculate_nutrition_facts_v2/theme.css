@@ -242,6 +242,10 @@ div.dashboard div.panels div.board > div {
 	right : 0;
 }
 
+div.dashboard div.panels div.board > div div.highlight {
+	background-color : #F48FB1; /* 200 */
+}
+
 div.dashboard div.panels div.board div.header {
 	top : 0;
 	line-height : 50px;
@@ -497,11 +501,6 @@ div.dashboard div.ingredient div.list > div {
 
 div.dashboard div.ingredient div.list > div:nth-child(even) {
 	background-color : #EFEBE9; /* 000 */
-}
-
-div.dashboard div.ingredient div.list > div.highlight {
-	color : #ffffff;
-	background-color : #C2185B; /* 700 */
 }
 
 /* ========================================================================== */

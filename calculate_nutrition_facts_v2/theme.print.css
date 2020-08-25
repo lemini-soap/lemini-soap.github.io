@@ -26,16 +26,16 @@ div.dashboard div.panels-container div.panels > div {
 	display : none;
 }
 
+div.dashboard div.panels-container div.panels > div > div.header {
+	display : none;
+}
+
+div.dashboard div.panels-container div.panels >div > div.footer {
+	display : none;
+}
+
 div.dashboard div.panels-container div.panels div.result {
 	display : block;
-}
-
-div.dashboard div.panels-container div.panels div.result div.header {
-	display : none;
-}
-
-div.dashboard div.panels-container div.panels div.result div.footer {
-	display : none;
 }
 
 /* ========================================================================== */

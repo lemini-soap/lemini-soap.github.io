@@ -332,6 +332,15 @@ const cnfSearch = {
 		}
 		this.List.set_focus_row_used();
 	}
+	,highlight_input: function () {
+		const P = this.Keyword.parentNode.parentNode;
+
+		this.Keyword.focus();
+		P.classList.add('highlight');
+		setTimeout(function () {
+			P.classList.remove('highlight');
+		}, 250);
+	}
 
 	// -----------------------------------------------------
 
@@ -455,7 +464,7 @@ const cnfIngredient = {
 	}
 	,new: function (Btn) {
 		if (cnfMobile.is_yes()) cnfMobile.TabCtrl.change_to('search');
-		cnfSearch.Keyword.focus();
+		cnfSearch.highlight_input();
 	}
 	,import: function () {
 		const F = cnfOp.Element.get_id('OPEN-FILE');
@@ -564,7 +573,7 @@ const cnfIngredient = {
 			E.classList.add('highlight');
 			setTimeout(function () {
 				E.classList.remove('highlight');
-			}, 200);
+			}, 250);
 		}
 	}
 };
