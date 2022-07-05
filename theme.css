@@ -36,3 +36,11 @@ h1 {
 	border-width : 0 0 1px 0;
 	border-color : #F5F5F5; /* 100 */
 }
+/* ========================================================================== */
+
+ul.list {
+	margin : 0 auto;
+	margin-top : 100px;
+	width : 720px;
+	line-height : 40px;
+}
